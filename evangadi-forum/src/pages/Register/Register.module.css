@@ -1,0 +1,170 @@
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px;
+  background: #f8f9fb;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wave Backgrounds */
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+  z-index: 0;
+  animation: float 12s ease-in-out infinite alternate;
+}
+
+.container::before {
+  top: -300px;
+  left: -300px;
+  background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+}
+
+.container::after {
+  bottom: -300px;
+  right: -300px;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(15deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(-15deg) scale(1);
+  }
+}
+
+/* White Card */
+.formBox {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  flex: 1;
+  max-width: 450px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.signInText {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: #f27405;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.form input {
+  width: 100%;
+  padding: 15px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #B7B5B5;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form input:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.2);
+}
+
+.nameRow {
+  display: flex;
+  gap: 10px;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn {
+  width: 100%;
+  background: #f27405;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+
+
+/* Right Side About Section */
+.aboutBox {
+  flex: 1;
+  padding: 40px;
+  max-width: 500px;
+  z-index: 1;
+}
+
+.aboutBox h4 {
+  color: #f27405;
+  margin-bottom: 10px;
+}
+
+.aboutBox h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.aboutBox p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.howBtn {
+  background: #f27405;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.howBtn:hover {
+  background: #d46300;
+}

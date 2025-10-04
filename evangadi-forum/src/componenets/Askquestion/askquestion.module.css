@@ -1,0 +1,35 @@
+.about_question {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.icon {
+  color:white; 
+  background-color: black;
+  border-radius: 50%;
+  font-size: 16px;
+  padding: 3px;
+  margin-top: 3px;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .icon {
+    font-size: 20px;
+  }
+  .about_question {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .icon {
+    font-size: 22px;
+  }
+}
+
+.form-control.custom-width {
+  width: 60% !important;
+  margin: 0 auto; /* centers inside parent */
+}

@@ -1,0 +1,23 @@
+.top_home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+.home_top_container{
+    padding-top: 60px;
+    width: 85% !important;
+    max-width: 800px;
+}
+.top_home a {
+  text-decoration: none;
+  background-color: #007bff;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 4px;
+}
+.top_home a:hover{
+    background-color:#FF8500 ;
+}

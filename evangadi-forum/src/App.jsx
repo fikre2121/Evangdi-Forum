@@ -1,14 +1,14 @@
-import { useState } from 'react'
 import './App.css'
-
+import Routering from './Routering'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <p>hello</p>
+      
+      <Routering/>
     </>
   )
+
 }
 
 export default App

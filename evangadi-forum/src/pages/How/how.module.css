@@ -1,0 +1,62 @@
+/* Top hero section */
+.how {
+  background-image: url("../../../assets/howmage.png");
+  background-position: bottom; /* 🔹 important part of image at top */
+  background-size: cover;          /* fills the container */
+  background-repeat: no-repeat;
+  width: 100%;
+   height: 200px;                   /* responsive height */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;           /* push text to bottom if needed */
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.how h1 {
+  position: relative;
+  z-index: 1;
+  color: black;
+}
+
+/* Content section */
+.second_how {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #333;
+}
+
+.second_how h5 {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444;
+  border-left: 4px solid #ff6600; /* accent line */
+  padding-left: 10px;
+}
+
+.second_how p {
+  margin-top: 10px;
+  color: #555;
+}
+
+.second_how ul {
+  margin: 10px 0 20px 20px;
+  padding-left: 15px;
+  list-style: disc;
+  color: #444;
+}
+
+.second_how li {
+  margin-bottom: 8px;
+}
