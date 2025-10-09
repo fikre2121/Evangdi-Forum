@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import logo from "../../../assets/evangadi.png";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../utilty/AuthProvider";
 function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+const { logout } = useAuth();
   return (
     <header className={styles.header}>
       <nav className="navbar  shadow-sm">
@@ -31,7 +32,7 @@ function Header() {
             <Link className="nav-link mx-2" to="/how">
               How It Works
             </Link>
-            <button className="btn btn-outline-danger ms-2">Logout</button>
+            <button onClick={logout} className="btn btn-outline-danger ms-2">Logout</button>
           </div>
         </div>
 
@@ -51,7 +52,7 @@ function Header() {
           >
             How It Works
           </Link>
-          <button className="btn btn-outline-danger mt-3 w-100">Logout</button>
+          <button  onClick={logout}className="btn btn-outline-danger mt-3 w-100">Logout</button>
         </div>
 
         {/* Overlay */}

@@ -2,9 +2,10 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosBase from "../../api/axiosBase";
 import styles from "./Register.module.css";
-
+import { useAuth } from "../../utilty/AuthProvider";
 function AuthPage() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -31,7 +32,7 @@ function AuthPage() {
       });
 
       alert("✅ Logged in successfully");
-      localStorage.setItem("token", data.token);
+      login(data.token,data.username); // this saves token + sets auth state
       navigate("/home");
     } catch (error) {
       alert(error.response?.data?.msg || "Something went wrong!");

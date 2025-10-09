@@ -1,13 +1,15 @@
 import './App.css'
 import Routering from './Routering'
+import { AuthProvider } from './utilty/AuthProvider'
 function App() {
 
   return (
     <>
-      
-      <Routering/>
+      <AuthProvider>
+        <Routering />
+      </AuthProvider>
     </>
-  )
+  );
 
 }
 

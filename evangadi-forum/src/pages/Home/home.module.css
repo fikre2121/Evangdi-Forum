@@ -21,3 +21,7 @@
 .top_home a:hover{
     background-color:#FF8500 ;
 }
+.user_name{
+    display: flex;
+    gap: 15px;
+}

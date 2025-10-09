@@ -5,19 +5,33 @@ import { Routes, Route, } from "react-router-dom";
 import Layout from "./componenets/Layout/Layout";
 import Askquestion from "./componenets/Askquestion/Askquestion";
 import QuestionDetail from "./pages/QuestionDetail/QuestionDetail";
+import ProtectRouting from "./componenets/protectRouting/ProtectRouting";
 function Routering() {
   
   return (
     <>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="home" element={<Home />} />
-          <Route path="how" element={<How />} />
+          <Route
+            path="home"
+            element={
+              <ProtectRouting>
+                <Home />
+              </ProtectRouting>
+            }
+          />
+          <Route
+            path="how"
+            element={
+              <ProtectRouting>
+                <How />
+              </ProtectRouting>
+            }
+          />
           <Route path="askq" element={<Askquestion />} />
           <Route path="questions/:questionid" element={<QuestionDetail />} />
+          <Route path="/" element={<Register />} />
         </Route>
-
-        <Route path="/" element={<Register />} />
       </Routes>
     </>
   );

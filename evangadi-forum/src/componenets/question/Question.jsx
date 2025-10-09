@@ -3,6 +3,7 @@ import { FaChevronRight } from "react-icons/fa";
 import proImg from "../../../assets/profile.png";
 import style from"./question.module.css"; 
 import { Link } from "react-router-dom";
+
 // custom styles for hover + image
 
 function Question({ data }) {
