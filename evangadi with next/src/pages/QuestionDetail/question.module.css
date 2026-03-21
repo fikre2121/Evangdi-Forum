@@ -1,0 +1,41 @@
+.home_top_container{
+    padding-top: 60px;
+    width: 85% !important;
+    max-width: 800px;
+}
+.answer_top {
+    margin: 40px;
+}
+.underline{
+   background-color: darkorange; 
+   width: 30%;
+   height: 3px;
+   border-radius: 3px;
+}
+.underline:hover{
+    width: 40%;
+}
+.answer_top p{
+    margin-top: 20px;
+}
+.comunity_container{
+border-bottom: 2px solid #EFEDED;
+border-top: 2px solid #EFEDED ;
+display:flex;
+flex-direction: column;
+align-items: center;
+}
+.toast {
+  animation: slideInRight 0.5s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
