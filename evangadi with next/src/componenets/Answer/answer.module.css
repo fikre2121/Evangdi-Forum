@@ -1,87 +1,109 @@
-/* Question Container */
+
+/* --- Card Container --- */
 .question_container {
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 20px;
   margin: 16px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e2e8f0; /* Subtle border prevents layout blending */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              background-color 0.2s ease;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Stacks vertically on mobile for better space */
+  gap: 16px;
 }
 
+/* --- Smooth Lift Hover Effect --- */
 .question_container:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  background-color: #f8fafc; /* Gentle tint change */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Content wrapper */
+/* --- Content Layout --- */
 .content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  flex: 1;
 }
 
-/* Profile + username wrapper */
+/* --- Profile & User Header --- */
 .prof_user {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .prof_user h5 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  color: #333;
-}
-
-/* Title */
-.title {
-  font-size: 12px;
-  font-weight: 500;
-  color: #222;
-  line-height: 1.4;
+  color: #475569; /* Balanced slate gray instead of harsh raw #333 */
   margin: 0;
 }
 
-/* Profile image - responsive */
-.profile-img {
-  width: 100%;
-  max-width: 50px;       
-  object-fit: cover;
-  border-radius: 50%;
-  padding: 3px;
+/* --- Main Typography (Clean & Readable) --- */
+.title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f172a; /* Premium dark indigo-black */
+  line-height: 1.5;
+  margin: 0;
 }
 
-/* Scale up on bigger screens */
-@media (min-width: 768px) {
-  .profile-img {
-    max-width: 80px;
+/* --- FIXED: Uniform Responsive Profile Image --- */
+.profile-img {
+  width: 44px; /* Fixed sizing stops layout explosions */
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  padding: 2px;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.question_container:hover .profile-img {
+  border-color: #3b82f6; /* Subtle brand glow on card hover */
+}
+
+/* --- Interactive Action Icons --- */
+.icon_arrow {
+  color: #94a3b8;
+  transition: transform 0.2s ease, color 0.2s ease;
+  align-self: center;
+  margin-left: auto;
+}
+
+.question_container:hover .icon_arrow {
+  color: #3b82f6;
+  transform: translateX(4px); /* Interactive horizontal nudge */
+}
+
+/* --- Responsive Layout Adjustments --- */
+@media (min-width: 576px) {
+  .question_container {
+    flex-direction: row; /* Layout switches to a clean row automatically */
+    align-items: center;
   }
-  .title{
-    font-size: 14px !important;
+  
+  .profile-img {
+    width: 48px; /* Slightly grows, but remains strictly constrained */
+    height: 48px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 16px; /* Optimized typography layout for medium viewports */
   }
 }
 
 @media (min-width: 1200px) {
-  .profile-img {
-    max-width: 200px;
+  .title {
+    font-size: 17px; /* Clear desktop readability */
   }
-  .title{
-font-size: 17px !important;
-  }
-  
-}
-
-/* Question card hover effect (extra, for consistency) */
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
 }
