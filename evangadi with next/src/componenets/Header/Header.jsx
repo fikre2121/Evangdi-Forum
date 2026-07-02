@@ -7,7 +7,8 @@ import { useAuth } from "../../utilty/AuthProvider";
 function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { logout } = useAuth();
-
+  const { login } = useAuth();
+  const { isAuthenticated } = useAuth();
   return (
     <>
       {/* HEADER */}
@@ -36,9 +37,18 @@ function Header() {
               <Link className="nav-link mx-2" to="/how">
                 How It Works
               </Link>
-              <button onClick={logout} className="btn btn-outline-danger ms-2">
-                Logout
-              </button>
+              {isAuthenticated ? (
+                <button
+                  onClick={logout}
+                  className="btn btn-outline-danger ms-2"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link to="/register" className="btn btn-warning ms-2">
+                  Login
+                </Link>
+              )}
             </div>
           </div>
         </nav>

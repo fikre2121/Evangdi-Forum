@@ -10,6 +10,5 @@ function ProtectRouting({ children }) {
     return <div>Loading...</div>;
   }
   return <div>{isAuthenticated ? children : <Navigate to="/" />}</div>;
-}
-
-export default ProtectRouting;
+} 
+export default ProtectRouting;  
